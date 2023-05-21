@@ -1,0 +1,96 @@
+// Toán tử in ra màn hình
+ostream& operator<<(ostream& os, const BigInt& num)
+{
+    return os;
+}
+
+// Hàm khởi tạo
+BigInt::BigInt() 
+{
+    
+}
+
+BigInt::BigInt(const char *num)
+{
+    
+}
+
+BigInt::BigInt(int num)
+{
+    
+}
+
+BigInt::BigInt(const BigInt& )
+{
+    
+}
+
+// Toán tử gán
+BigInt& BigInt::operator=(int num)
+{
+    return *this;
+}
+
+BigInt& BigInt::operator=(const BigInt& num)
+{
+    return *this;
+}
+
+BigInt& BigInt::operator=(const char *num)
+{
+    return *this;
+}
+
+// Toán tử cộng
+BigInt operator+(const BigInt& num, const BigInt& other)
+{
+    return BigInt(); // Sua dong nay
+}
+
+BigInt operator+(const BigInt& num, int other)
+{
+    return BigInt(); // Sua dong nay
+}
+
+BigInt operator+(int num, const BigInt& other)
+{
+    return BigInt(); // Sua dong nay
+}
+
+// Toán tử trừ
+BigInt operator-(const BigInt& num, const BigInt& other)
+{
+    return BigInt(); // Sua dong nay
+}
+
+BigInt operator-(const BigInt& num, int other)
+{
+    return BigInt(); // Sua dong nay
+}
+
+BigInt operator-(int num, const BigInt& other)
+{
+    return BigInt(); // Sua dong nay
+}
+
+// Toán tử cộng rồi gán
+BigInt& BigInt::operator+=(int num)
+{
+    return *this;
+}
+
+BigInt& BigInt::operator+=(const BigInt& num)
+{
+    return *this;
+}
+
+// Toán tử trừ rồi gán
+BigInt& BigInt::operator-=(int num)
+{
+    return *this;
+}
+
+BigInt& BigInt::operator-=(const BigInt& num)
+{
+    return *this;
+}

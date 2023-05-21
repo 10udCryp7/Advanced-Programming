@@ -1,0 +1,13 @@
+class MyFraction {
+private:
+    int a, b;
+public:
+    MyFraction(int _a = 1, int _b = 1);
+    void print() const;
+    MyFraction add(const MyFraction& f) const;
+    MyFraction substract(const MyFraction& f) const;
+    MyFraction multiply(const MyFraction& f) const;
+    MyFraction divide(const MyFraction& f) const;
+    void simplify();
+    int compare(const MyFraction& f) const;
+};

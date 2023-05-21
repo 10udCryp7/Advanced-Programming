@@ -1,0 +1,55 @@
+class Vector {
+    double x_, y_;
+public:
+    Vector(double x = 0, double y = 0);  
+    void print(int precision = 2, bool newLine = true); 
+    void truncate(double length);
+    bool isOrtho(const Vector& v) const;
+    static float dot(const Vector& v1, const Vector& v2);
+    static float cross(const Vector& v1, const Vector& v2);
+    friend ostream& operator<<(ostream& os, const Vector& v); 
+};
+
+
+class Vector {
+    double x_, y_;
+public:
+    Vector(double x = 0, double y = 0);  
+    void print(int precision = 2, bool newLine = true); 
+    Vector& operator=(const Vector& v);    
+    Vector operator+(const Vector& v) const;
+    Vector operator-(const Vector& v) const;
+    Vector& operator+=(const Vector& v);
+    Vector& operator-=(const Vector& v);
+};
+
+
+class Vector {
+    double x_, y_;
+public:
+    Vector(double x = 0, double y = 0);  
+    void print(int precision = 2, bool newLine = true); 
+    Vector operator+(double s) const;    
+    Vector operator-(double s) const;
+    Vector operator*(double s) const;
+    Vector operator/(double s) const;
+    Vector& operator+=(double s);    
+    Vector& operator-=(double s);
+    Vector& operator*=(double s);
+    Vector& operator/=(double s);
+};
+
+
+class Fraction {
+    int a, b;
+public:
+    Fraction(int a = 1, int b = 1);
+    friend ostream& operator<<(ostream& os, const Fraction& f);
+    Fraction operator+(const Fraction& f) const;
+    Fraction operator-(const Fraction& f) const;
+    Fraction operator*(const Fraction& f) const;
+    Fraction operator/(const Fraction& f) const;
+    void simplify();
+    bool operator>(const Fraction& f) const;
+    bool operator<(const Fraction& f) const;
+};

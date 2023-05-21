@@ -1,0 +1,107 @@
+class BigInt {
+    string value;
+    int sign;
+public:
+    // Hàm khởi tạo số nguyên lớn
+    BigInt();
+    BigInt(const char*);
+    BigInt(int );
+    BigInt(const BigInt& );
+
+    // Toán tử in ra màn hình
+    friend ostream& operator<< (ostream& , const BigInt& );
+
+    // Toán tử gán
+    BigInt& operator=(int );
+    BigInt& operator=(const char*);
+    BigInt& operator=(const BigInt& );
+
+    // Toán tử cộng
+    friend BigInt operator+(const BigInt& , const BigInt & );
+    friend BigInt operator+(const BigInt& , int );
+    friend BigInt operator+(int , const BigInt &);
+
+    // Toán tử trừ
+    friend BigInt operator-(const BigInt& , const BigInt & );
+    friend BigInt operator-(const BigInt& , int );
+    friend BigInt operator-(int , const BigInt &);
+
+    // Toán tử cộng rồi gán
+    BigInt& operator+=(int );
+    BigInt& operator+=(const BigInt& );
+
+    // Toán tử trừ rồi gán
+    BigInt& operator-=(int );
+    BigInt& operator-=(const BigInt& );
+};
+
+
+
+
+
+struct Point {
+    double x, y;  // Toạ độ x, y
+    Point(); // Hàm khởi tạo điểm (0, 0)
+    Point(double, double); // Hàm khởi tạo từ toạ độ x, y
+    Point(const Point&); // Hàm khởi tạo sao chép từ một thực thể (instance) Point khác
+};
+
+class Triangle {
+    Point p1, p2, p3;
+public:
+    Triangle(Point, Point, Point); // Hàm khởi tạo tam giác từ 3 điểm
+    double getPerimeter() const;  // Hàm trả về chu vi tam giác
+    double getArea() const;  // Hàm trả về diện tích tam giác
+};
+
+
+class MyString {
+    char *str;
+    int len;
+public:
+    // Hàm khởi tạo xâu rỗng
+    MyString();
+
+    // Hàm khởi tạo từ một xâu kiểu c-string
+    MyString(const char* );
+
+    // Hàm khởi tạo sao chép từ một thực thể (instance) MyString khác
+    MyString(const MyString& );
+
+    // Hàm huỷ
+    ~MyString();
+
+    // Toán tử gán
+    MyString operator=(const MyString& );
+    MyString operator=(const char* );
+
+    // Toán tử nối xâu rồi gán
+    MyString operator+=(const MyString& );
+
+    // Toán tử truy cập đến từng kí tự
+    char& operator[] (unsigned int index);
+    const char& operator[] (unsigned int index) const;
+
+    // Hàm trả về độ dài của xâu
+    int size();
+
+    // Hàm trả về 1 thực thể MyString có các kí tự giống thực thể đang xét nhưng các chữ cái viết hoa
+    MyString upper() const;
+
+    // Hàm trả về 1 thực thể MyString có các kí tự giống thực thể đang xét nhưng các chữ cái viết thường
+    MyString lower() const;
+
+    // Toán tử để in ra màn hình
+    friend ostream& operator<< (ostream& , const MyString& );
+
+    // Toán tử nối xâu
+    friend MyString operator+ (const MyString& , const MyString& );
+
+    // Các toán tử so sánh
+    friend bool operator< (const MyString& , const MyString& );
+    friend bool operator> (const MyString& , const MyString& );
+    friend bool operator<=(const MyString& , const MyString& );
+    friend bool operator>=(const MyString& , const MyString& );
+    friend bool operator==(const MyString& , const MyString& );
+    friend bool operator!=(const MyString& , const MyString& );
+};
